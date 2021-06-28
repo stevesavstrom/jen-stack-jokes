@@ -6,8 +6,9 @@ function onReady() {
     console.log('DOM ready');
 	getJokes();
 	$('#addJokeButton').on('click', addJokes);
-}
+} // end onReady
 
+// AJAX function for GET request from server
 function getJokes() {
 	$.ajax({
 	  method: 'GET',
@@ -20,9 +21,10 @@ function getJokes() {
 	.catch(function (error) {
 	  console.log('Error!', error);
 	});
-  }
+  } // end getJokes
 
-  function renderItems(jokeArray) {
+// render function to display inputs and answers on DOM
+function renderItems(jokeArray) {
 	$('#outputDiv').empty();
   
 	for (let joke of jokeArray) {
@@ -32,9 +34,10 @@ function getJokes() {
 		  <strong>Punchline:</strong> ${joke.punchLine}<span></span><br><br>
 	  `);
 	}
-  }
+  } // end renderItems
 
-  function addJokes() {
+// AJAX function for GET request from server
+function addJokes() {
 	$.ajax({
 	  method: 'POST',
 	  url: '/jokes',
@@ -54,4 +57,4 @@ function getJokes() {
 	$('#whoseJokeIn').val(''),
 	$('#questionIn').val(''),
 	$('#punchlineIn').val('')
-  }
+  } // end addJokes
