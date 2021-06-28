@@ -49,5 +49,5 @@ Remember to work in small increments and test often. If you want to take things 
 
 [x] Hold all data in array of objects while server is running.
 
-[] 
+[x] Done with everything and ready to turn it in? Test everything again!
 
