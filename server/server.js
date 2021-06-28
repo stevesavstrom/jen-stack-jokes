@@ -48,6 +48,25 @@ app.listen(port, () => {
 	  punchLine: "It was a shih tzu."
 	}
   ];
+
+  app.get(`/jokes`, function(req,res) {
+	console.log('Request for /jokes was made!');
+	res.send(jokes);
+   });
+
+   app.post(`/jokes`, function(req,res) {
+	console.log('Get a POST request!', req.body);
+
+	let newJoke = req.body;
+  
+	// Push the new item into our array.
+	console.log('Adding a new joke:', newJoke);
+	jokes.push(newJoke);
+  
+	//ALWAYS have to send a response!
+	// send a response with a 201,
+	res.sendStatus(201);
+   });
   
 
 
