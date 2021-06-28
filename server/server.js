@@ -1,6 +1,6 @@
 // creating express app...
 
-// required express - give us function
+// require express
 const express = require('express');
 
 // create an instance of express by calling a function
@@ -21,40 +21,55 @@ app.listen(port, () => {
 	console.log('listening on port', port);
   });
 
-  let jokes = [
+// global variable for existing jokes
+// new jokes will be pushed to this array with user interface
+let jokes = [
 	{
-	  whoseJoke: "Danny",
-	  jokeQuestion: "Why do scuba divers fall backwards out of boats?",
-	  punchLine: "If they fell forwards they’d still be in the boat!"
+		whoseJoke: "Danny",
+		jokeQuestion: "Why do scuba divers fall backwards out of boats?",
+		punchLine: "If they fell forwards they’d still be in the boat!"
 	},
 	{
-	  whoseJoke: "Luke",
-	  jokeQuestion: "Two fish are in a tank. What did one fish say to the other?",
-	  punchLine: "Do you know how to drive this thing?"
+		whoseJoke: "Luke",
+		jokeQuestion: "Two fish are in a tank. What did one fish say to the other?",
+		punchLine: "Do you know how to drive this thing?"
 	},
 	{
-	  whoseJoke: "Millie",
-	  jokeQuestion: "What do you call a pile of cats?",
-	  punchLine: "A meowntain!"
+		whoseJoke: "Millie",
+		jokeQuestion: "What do you call a pile of cats?",
+		punchLine: "A meowntain!"
 	},
 	{
-	  whoseJoke: "dEv",
-	  jokeQuestion: "Why should you not play cards in the forest?",
-	  punchLine: "Too many Cheetahs!"
+		whoseJoke: "dEv",
+		jokeQuestion: "Why should you not play cards in the forest?",
+		punchLine: "Too many Cheetahs!"
 	},
 	{
-	  whoseJoke: "Scott",
-	  jokeQuestion: "I went to the zoo the other day, it had one dog...",
-	  punchLine: "It was a shih tzu."
-	}
-  ];
+		whoseJoke: "Scott",
+		jokeQuestion: "I went to the zoo the other day, it had one dog...",
+		punchLine: "It was a shih tzu."
+	},
+	{
+		whoseJoke: "Steve",
+		jokeQuestion: "What is a programmer's favorite place to hangout after work?",
+		punchLine: "Foo Bar"
+	},
+	{
+		whoseJoke: "Cassie",
+		jokeQuestion: "Why did the developer quit her job?",
+		punchLine: "Because she didn't get arrays."
+		}
 
-  app.get(`/jokes`, function(req,res) {
+];
+
+// GET route/request
+app.get(`/jokes`, function(req,res) {
 	console.log('Request for /jokes was made!');
 	res.send(jokes);
    });
 
-   app.post(`/jokes`, function(req,res) {
+// POST route/request
+app.post(`/jokes`, function(req,res) {
 	console.log('Get a POST request!', req.body);
 
 	let newJoke = req.body;
@@ -63,7 +78,6 @@ app.listen(port, () => {
 	console.log('Adding a new joke:', newJoke);
 	jokes.push(newJoke);
   
-	//ALWAYS have to send a response!
 	// send a response with a 201,
 	res.sendStatus(201);
    });

@@ -33,3 +33,21 @@ Overview
 * after a joke is added, the jokes displayed on the DOM should reflect the new data
 
 Remember to work in small increments and test often. If you want to take things further, first push the working basic mode to your github and update it after.
+
+### To Do List
+[x] Test server and make sure it is running.
+
+[x] Create POST/GET routes and request on server side.
+
+[x] Create POST/GET AJAX functions on client side.
+
+[x] Functionality to add new joke by filling inputs and click "Add Joke" button. 
+
+[x] Display existing jokes in DOM on page load.
+
+[x] Display added jokes in list of jokes on DOM
+
+[x] Hold all data in array of objects while server is running.
+
+[] 
+
