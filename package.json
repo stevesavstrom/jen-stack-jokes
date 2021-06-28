@@ -1,23 +1,24 @@
 {
-  "name": "new_code_challenge_2",
+  "name": "jen-stack-jokes",
   "version": "1.0.0",
-  "description": "Code Challenge 2",
-  "main": "server/server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js"
   },
-  "keywords": [
-    "prime",
-    "tau",
-    "jquery",
-    "node",
-    "express"
-  ],
-  "author": "PrimeAcademy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevesavstrom/jen-stack-jokes.git"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevesavstrom/jen-stack-jokes/issues"
+  },
+  "homepage": "https://github.com/stevesavstrom/jen-stack-jokes#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0"
+    "express": "^4.17.1"
   }
 }
